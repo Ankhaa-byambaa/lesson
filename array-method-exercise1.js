@@ -254,10 +254,10 @@ function getHighlyRatedProducts(products) {
 console.log(" dasgal19 =", getHighlyRatedProducts(data));
 
 // 20. Бүх бүтээгдэхүүнд `id` талбар нэмж өгдөг функц бич (жишээ нь 1, 2, 3...).
+// const id = Math.random();-random too awna
+//index ugsun bol 0 -ees ehelne
 function addIdToProducts(products) {
   let map = products.map((product, index) => {
-    // const id = Math.random();-random too awna
-    //index ugsun bol 0 -ees ehelne
     return {
       ...product,
       id: index + 1,
