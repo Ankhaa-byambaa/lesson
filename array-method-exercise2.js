@@ -235,9 +235,31 @@ function getMostEfficientCar(cars) {
   return result;
 }
 console.log("Exercise 10 = ", getMostEfficientCar(cars));
-// 17. Давхардалгүй брэндийн нэрсийг массив болгон буцаадаг функц бич.
-function getUniqueBrands(cars) {}
+
 // 11. Хамгийн өндөр үнэтэй машиныг буцаадаг функц бич.
 function getMostExpensiveCar(cars) {}
+// 17. Давхардалгүй брэндийн нэрсийг массив болгон буцаадаг функц бич.
+function getUniqueBrands(cars) {
+  let arrBrand = cars.map((car) => {
+    return car.brand;
+  });
+  let uniqueBrandName = [];
+  arrBrand.forEach((brand) => {
+    if (uniqueBrandName.includes(brand) === cars.brand) {
+    } else {
+      uniqueBrandName.push(brand);
+    }
+  });
+  return uniqueBrandName;
+}
+console.log("Exercise 17 = ", getUniqueBrands(cars));
+
 // 12. Бүх машины нийлбэр mileage-г буцаадаг функц бич.
-function getTotalMileage(cars) {}
+function getTotalMileage(arr) {
+  let sum = 0;
+  for (i = 0; i < arr.length; i++) {
+    sum = sum + arr[i].mileage;
+    return sum;
+  }
+}
+console.log("exrecise 12 =", getMostExpensiveCar(cars));
