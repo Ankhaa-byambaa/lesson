@@ -68,7 +68,7 @@ let cars = [
 
 // 1. Нөөцөд байгаа (isAvailable === true) машинуудыг буцаадаг функц бич.
 function getAvailableCars(arr) {
-  let filtered = arr.filter((car) => {
+  let filtered = arr.map((car) => {
     return car.isAvailable === true;
   });
   return filtered;
@@ -123,7 +123,7 @@ console.log("Exercise 6 = ", getHighMileageCars(cars));
 // 7. Машины түлш зарцуулалтаар fuelEfficiency талбарт `efficient: true/false` нэмдэг функц бич (5.0-аас бага бол efficient).
 function addEfficiencyFlag(cars) {
   let result = cars.filter((car) => {
-    if (car.fuelEfficiency >= 5.0) {
+    if (car.fuelEfficiency <= 5.0) {
       return car && (car.efficient = false);
     } else {
       return car && (car.efficient = true);
@@ -222,22 +222,6 @@ function addIdToCars(cars) {
 }
 console.log("Erxecise 20 = ", addIdToCars(cars));
 
-//--------------------------------------------------------------------------------------
-// 10. Хамгийн бага түлш зарцуулалттай машиныг буцаадаг функц бич.
-function getMostEfficientCar(cars) {
-  let min = cars[0];
-  let result = cars.forEach((car) => {
-    if (car.fuelEfficiency < min) {
-      min = car;
-      return min;
-    }
-  });
-  return result;
-}
-console.log("Exercise 10 = ", getMostEfficientCar(cars));
-
-// 11. Хамгийн өндөр үнэтэй машиныг буцаадаг функц бич.
-function getMostExpensiveCar(cars) {}
 // 17. Давхардалгүй брэндийн нэрсийг массив болгон буцаадаг функц бич.
 function getUniqueBrands(cars) {
   let arrBrand = cars.map((car) => {
@@ -254,12 +238,40 @@ function getUniqueBrands(cars) {
 }
 console.log("Exercise 17 = ", getUniqueBrands(cars));
 
-// 12. Бүх машины нийлбэр mileage-г буцаадаг функц бич.
-function getTotalMileage(arr) {
-  let sum = 0;
-  for (i = 0; i < arr.length; i++) {
-    sum = sum + arr[i].mileage;
-    return sum;
+//--------------------------------------------------------------------------------------
+// 10. Хамгийн бага түлш зарцуулалттай машиныг буцаадаг функц бич.
+function getMostEfficientCar(cars) {
+  let min = cars.fuelEfficiency;
+  for (i = 0; i < cars.length; i++) {
+    if (min > cars[i].fuelEfficiency) {
+      min = cars[i].fuelEfficiency;
+    }
   }
+  return min;
 }
-console.log("exrecise 12 =", getMostExpensiveCar(cars));
+
+console.log("Exercise 10 = ", getMostEfficientCar(cars));
+
+// 11. Хамгийн өндөр үнэтэй машиныг буцаадаг функц бич.
+function getMostExpensiveCar(cars) {
+  let max = cars[0];
+  for (i = 0; i < cars.length; i++) {
+    if (max < cars[i].price) {
+      max = cars[i].price;
+    }
+  }
+  return max;
+}
+console.log("Exercise 11 = ", getMostExpensiveCar(cars));
+
+// 12. Бүх машины нийлбэр mileage-г буцаадаг функц бич.
+
+function getTotalMileage(cars) {
+  let sum = 0;
+  cars.forEach((car) => {
+    sum += car.mileage;
+  });
+
+  return sum;
+}
+console.log("exrecise 12 =", getTotalMileage(cars));
