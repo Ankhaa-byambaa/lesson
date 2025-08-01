@@ -90,21 +90,75 @@ let cars = [
       "https://www.google.com/imgres?q=Hyundai%20Sonata%20silver%20&imgurl=https%3A%2F%2Fhips.hearstapps.com%2Fhmg-prod%2Fimages%2F2024-hyundai-sonata-n-line-67575bf5529cc.jpg%3Fcrop%3D0.571xw%3A0.486xh%3B0.212xw%2C0.418xh%26resize%3D2048%3A*&imgrefurl=https%3A%2F%2Fwww.caranddriver.com%2Fhyundai%2Fsonata&docid=frchJChQvLbKdM&tbnid=o1Hzz5jTCRzAUM&vet=12ahUKEwiYiJ-MsuiOAxXMVmwGHbqmByMQM3oECDIQAA..i&w=1285&h=729&hcb=2&ved=2ahUKEwiYiJ-MsuiOAxXMVmwGHbqmByMQM3oECDIQAA",
   },
 ];
+// input hiigeed utge hiihed array dotorh objectoos haigaad gargaj ireh
+// uugeer niit heden shirheg brand bolon brand tus buriin product hed bgaag haruulna
+const findBrand = cars.filter(() => {});
+
 const carListDiv = document.getElementById("carList");
-let carPTag = "";
+
 cars.map((car) => {
-  carPTag += `<div class="card"`;
-  carPTag += `<p class="carPrice" ` + car.price + `</p>`;
-  carPTag += `<div class ="miniDiv">`;
-  carPTag += `<p class="carBrand"` + car.brand + `</p>`;
-  carPTag += `<p class ="carName"` + car.model + `</p>`;
-  carPTag += `</divwidth>`;
-  carPTag += `<div class ="miniDiv"`;
-  carPTag += `<p class = "carMileage"` + car.mileage + `</p>`;
-  carPTag += `<p class = "carColor"` + car.color + `</p>`;
-  carPTag += `<p class = "carYear"` + car.year + `</p>`;
-  carPTag += `<p class = "carType"` + car.type + `</p>`;
-  carPTag += `</div>`;
-  carPTag += `</div >`;
+  const mainDiv = document.createElement("div");
+  const introDiv = document.createElement("img");
+  const miniDiv = document.createElement("div");
+  const miniDiv2 = document.createElement("div");
+  const brandDiv = document.createElement("div");
+  const imgTag = document.createElement("img");
+  const totalBrand = document.createElement("p");
+  const pTag = document.createElement("p");
+  const colorPTag = document.createElement("p");
+  const image = document.createElement("img");
+  const price = document.createElement("p");
+  const fuelEfficiency = document.createElement("p");
+  const year = document.createElement("p");
+  const mileage = document.createElement("p");
+  const supplier = document.createElement("p");
+  const type = document.createElement("p");
+  const brand = document.createElement("p");
+
+  introDiv.className = "introDiv";
+  brandDiv.className = "brandDiv";
+  totalBrand.className = "totalBrand";
+  miniDiv2.className = "miniDiv2";
+  miniDiv.className = "miniDiv";
+  brand.className = "car";
+  type.className = "car";
+  mileage.className = "car";
+  supplier.className = "car";
+  year.className = "car";
+  fuelEfficiency.className = "car";
+  price.className = "carPrice";
+  mainDiv.className = "card";
+  pTag.className = "car";
+  colorPTag.className = "car";
+  image.className = "image";
+
+  imgTag.innerHTML = car.image;
+  totalBrand.innerText = car.brand + findBrand;
+  brand.innerText = "Brand :" + car.brand;
+  type.innerText = car.type;
+  mileage.innerText = "Mileage :" + car.mileage;
+  image.iinerHTML = car.image;
+  price.innerText = "price :" + car.price;
+  supplier.innerText = "Supplier :" + car.supplier;
+  pTag.innerText = "Model :" + car.model;
+  year.innerTex = " Year :" + car.year;
+  colorPTag.innerText = car.color;
+  fuelEfficiency.innerText = "FuelEfficiency :" + car.fuelEfficiency;
+  mainDiv.appendChild(imgTag);
+  mainDiv.appendChild(introDiv);
+  introDiv.appendChild(miniDiv);
+  introDiv.appendChild(miniDiv2);
+  mainDiv.appendChild(image);
+  mainDiv.appendChild(price);
+  miniDiv.appendChild(brand);
+  mainDiv.appendChild(miniDiv);
+  miniDiv.appendChild(pTag);
+  miniDiv2.appendChild(type);
+  miniDiv2.appendChild(colorPTag);
+  miniDiv2.appendChild(year);
+  miniDiv2.appendChild(fuelEfficiency);
+  miniDiv2.appendChild(mileage);
+  miniDiv2.appendChild(supplier);
+  mainDiv.appendChild(miniDiv2);
+  carListDiv.appendChild(mainDiv);
 });
-carListDiv.innerHTML = carPTag;
