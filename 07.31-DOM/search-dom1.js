@@ -102,6 +102,7 @@ cars.map((car) => {
   const miniDiv = document.createElement("div");
   const miniDiv2 = document.createElement("div");
   const brandDiv = document.createElement("div");
+  const imgTag = document.createElement("img");
   const totalBrand = document.createElement("p");
   const pTag = document.createElement("p");
   const colorPTag = document.createElement("p");
@@ -131,6 +132,7 @@ cars.map((car) => {
   colorPTag.className = "car";
   image.className = "image";
 
+  imgTag.innerHTML = car.image;
   totalBrand.innerText = car.brand + findBrand;
   brand.innerText = "Brand :" + car.brand;
   type.innerText = car.type;
@@ -142,7 +144,7 @@ cars.map((car) => {
   year.innerTex = " Year :" + car.year;
   colorPTag.innerText = car.color;
   fuelEfficiency.innerText = "FuelEfficiency :" + car.fuelEfficiency;
-
+  mainDiv.appendChild(imgTag);
   mainDiv.appendChild(introDiv);
   introDiv.appendChild(miniDiv);
   introDiv.appendChild(miniDiv2);
