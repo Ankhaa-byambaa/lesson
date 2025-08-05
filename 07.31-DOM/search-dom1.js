@@ -92,19 +92,23 @@ let cars = [
 ];
 const carListDiv = document.getElementById("carList");
 let carPTag = "";
-cars.map((car) => {
-  carPTag += `<div class="card"`;
-  carPTag += `<p class="carPrice" ` + car.price + `</p>`;
-  carPTag += `<div class ="miniDiv">`;
-  carPTag += `<p class="carBrand"` + car.brand + `</p>`;
-  carPTag += `<p class ="carName"` + car.model + `</p>`;
-  carPTag += `</divwidth>`;
-  carPTag += `<div class ="miniDiv"`;
-  carPTag += `<p class = "carMileage"` + car.mileage + `</p>`;
-  carPTag += `<p class = "carColor"` + car.color + `</p>`;
-  carPTag += `<p class = "carYear"` + car.year + `</p>`;
-  carPTag += `<p class = "carType"` + car.type + `</p>`;
-  carPTag += `</div>`;
-  carPTag += `</div >`;
-});
-carListDiv.innerHTML = carPTag;
+function getmyResult(cars) {
+  let result = cars.map((car) => {
+    carPTag += `<div class="card"`;
+    carPTag += `<p class="carPrice" ` + car.price + `</p>`;
+    carPTag += `<div class ="miniDiv">`;
+    carPTag += `<p class="carBrand"` + car.brand + `</p>`;
+    carPTag += `<p class ="carName"` + car.model + `</p>`;
+    carPTag += `</div>`;
+    carPTag += `<div class ="miniDiv"`;
+    carPTag += `<p class = "carMileage"` + car.mileage + `</p>`;
+    carPTag += `<p class = "carColor"` + car.color + `</p>`;
+    carPTag += `<p class = "carYear"` + car.year + `</p>`;
+    carPTag += `<p class = "carType"` + car.type + `</p>`;
+    carPTag += `</div>`;
+    carPTag += `</div >`;
+  });
+
+  carListDiv.innerHTML = carPTag;
+  return result;
+}
