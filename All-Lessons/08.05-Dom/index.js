@@ -75,6 +75,7 @@ let cars = [
       "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQGEWW3EQiXdB0keiHpi8WMPP_aNuSSMdBKUA&s",
   },
 ];
+
 function createCard(cardData) {
   const result = cardData.map((car) => {
     const mainDiv = document.createElement("div");

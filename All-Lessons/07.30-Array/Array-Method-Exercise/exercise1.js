@@ -63,7 +63,6 @@ let data = [
 
 // 1. Хямдралтай бүтээгдэхүүнүүдийг шүүж буцаадаг функц бич.
 function getDiscountedProducts(products) {
-  let ene = products.isDiscounted;
   let result = products.filter((products) => {
     return products.isDiscounted === true;
   });
