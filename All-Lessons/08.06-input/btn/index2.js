@@ -31,7 +31,7 @@ function render() {
       render();
     });
     div.appendChild(li);
-    div.appendChild(input);
+    div.appendChild(btn);
     ul.appendChild(div);
   });
   return result;
@@ -43,3 +43,11 @@ function printInputValue(value) {
 
 div.appendChild(input);
 div.appendChild(button);
+// input hooson ued button deer darhad li neegdehgui bh
+// bas alert , prompt garch irdeg bh
+//prompt deer hiisen utag awtomataar li .innertext boloh
+// nemelteer css bichih
+// x button deer darhad ustdag bh
+//update icon deer darhad update hiih div dotor input garch irdeg , hiisen utgaa done button deer darhad tuhain list update hiigdsen bh
+// to do list ruugee orohdoo kod hiij boldog bolgoh
+// to do sketch ee sain gargaad 4 huudash bolgoh
