@@ -62,6 +62,7 @@ let data = [
 ];
 
 // 8. Хямдралын дараах үнэтэй `finalPrice` талбарыг тооцож нэмдэг функц бич.
+
 function addFinalPrice(products) {
   let price = products.discountPercent;
   let result = products.filter((product) => {
