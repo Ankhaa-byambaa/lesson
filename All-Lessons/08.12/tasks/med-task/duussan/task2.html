@@ -19,11 +19,17 @@
   </head>
   <body>
     <div class="mainSection" id="mainSection">
-      <p class="PTag1" id="PTag1"></p>
+      <p class="PTag1" id="PTag1">write here</p>
       <input type="text" class="input" id="input" />
-      <button class="changeButton" id="cbtn"></button>
-      <ul id=" a"></ul>
+      <button onclick="a()">Add</button>
+      <ul id="a"></ul>
     </div>
-    <script src="task2.js"></script>
+    <script>
+      function a() {
+        const li = document.createElement("li");
+        document.getElementById("a").appendChild(li);
+        li.innerText = input.value;
+      }
+    </script>
   </body>
 </html>
