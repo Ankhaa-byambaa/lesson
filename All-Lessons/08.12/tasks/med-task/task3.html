@@ -19,16 +19,48 @@
   </head>
   <body>
     <div class="mainSection">
-      <p class="sort">sort</p>
-      <p class="num">2,3,4,56,7,8,0,9</p>
-      <p class="result">result :</p>
-      <button class="btn"></button>
+      <p class="sort" id="sort">sort</p>
+      <p class="num" id="num"></p>
+      <p class="result" id="result">result :</p>
+      <button onclick>click</button>
     </div>
     <script>
-      const sort = document.getElementById("sort");
-      const num = document.getElementById("num");
-      const btn = document.getElementById("btn");
-      const result = document.getElementById("result");
+      //const num = document.getElementById("num");
+      //const btn = document.getElementById("btn");
+      const number = document.getElementById("num");
+      const Ptag = document.getElementById("result");
+      const num = [
+        { too: "2" },
+        { too: "2" },
+        { too: "3" },
+        { too: "4" },
+        { too: "29" },
+        { too: "7" },
+        { too: "267" },
+        { too: "76" },
+      ];
+      function map() {
+        const map = num.map(() => {
+          return (number.innerText = num.too);
+        });
+        return map;
+      }
+
+      function wow(num) {
+        let result = num.sort((num2, num1) => {
+          return (Ptag.innerText = parseInt(num2 - num1));
+        });
+        return result;
+      }
+      const urDun = wow(num);
+      console.log(urDun);
+
+      /*btn.addEventListener("click", function sort(num1) {
+        const result = num1.sort((a, b) => {
+          return b - a;
+        });
+        return result;
+      });*/
     </script>
   </body>
 </html>

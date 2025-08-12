@@ -24,8 +24,29 @@
         <option value="vegetables">vegetables</option>
         <option value="fruits">fruits</option>
       </select>
-      <ul id="ul"></ul>
+      <ul id="list"></ul>
     </div>
-    <script src="task5.js"></script>
+    <script>
+      const P1 = document.getElementById("P");
+      const food = document.getElementById("food");
+
+      P.innerText = "select";
+
+      const arr = [
+        { name: "potato", option: "vegetable" },
+        { name: "tomato", option: "vegetable" },
+        { name: "pmpkin", option: "vegetable" },
+        { name: "apple", option: "fruits" },
+        { name: "banana", option: "fruits" },
+        { name: "strawberry", option: "fruits" },
+      ];
+      let count = 0;
+      for (i = 0; i < arr.length; i++) {
+        count++;
+        const li = document.createElement("li");
+        li.iinerText = arr[count].name;
+        document.getElementById("list").appendChild("li");
+      }
+    </script>
   </body>
 </html>
