@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Tiny5&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      .time {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: row;
+      }
+      body {
+        background-color: rgb(50, 120, 174);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .mainSection {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        width: 500px;
+        height: 300px;
+      }
+      .text {
+        font-size: 1em;
+        font-family: Tiny5;
+      }
+      .btn {
+        font-family: Tiny5;
+        color: black;
+        background-color: rgb(213, 142, 160);
+        font-size: 1.5em;
+        border-radius: 5px;
+        padding: 0px 15px;
+      }
+      .Counter {
+        font-size: 5em;
+        font-family: Tiny5;
+      }
+      .timers {
+        font-family: Tiny5;
+        color: black;
+        background-color: rgb(213, 142, 160);
+        font-size: 1.5em;
+        border-radius: 5px;
+        padding: 0px 25px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="mainSection">
+      <div class="time">
+        <span class="Counter" id="hourCounter">00</span>
+        <span class="text">hour</span>
+        <span class="Counter" id="minCounter">00</span>
+        <span class="text">min</span>
+        <span class="Counter" id="secCounter">000</span>
+        <span class="text">sec</span>
+        <span class="Counter" id="mls1Counter">0</span>
+        <span class="Counter" id="mls2Counter">0</span>
+        <span class="Counter" id="mls3Counter">0</span>
+        <span class="text">mls</span>
+      </div>
+      <div class="otherItems">
+        <button onclick="stopTime()" class="btn">stop</button>
+        <button onclick="startTimer()" class="btn">start</button>
+        <button onclick="reset()" class="btn">reset</button>
+        <a href="watchTimer.html"> <button class="timers">timers</button></a>
+      </div>
+    </div>
+    <script>
+      //second oo taiulan huwisagch zarlana
+      //start btn deer darah ued minii startTime function ajillana
+      const secCounter = document.getElementById("secCounter");
+      const minCounter = document.getElementById("minCounter");
+      const hourCounter = document.getElementById("hourCounter");
+      const mls1Counter = document.getElementById("mls1Counter");
+      const mls2Counter = document.getElementById("mls2Counter");
+      const mls3Counter = document.getElementById("mls3Counter");
+
+      let mls = 0;
+      let second = 0;
+      let minut = 0;
+      let hour = 0;
+
+      secCounter.innerText = second;
+      minCounter.innerText = minut;
+      hourCounter.innerText = hour;
+      mlsCounter.innrText = mls;
+
+      function add() {
+        let currenttime = newDAte;
+        second++;
+        mls = timeElapsed.getUTCMilliseconds();
+        if (mls === 1000) {
+          mls = 0;
+          second++;
+        }
+        if (second === 59) {
+          minut++;
+          second = 0;
+        }
+        if (minut === 59) {
+          minut = 0;
+          hour++;
+        }
+
+        minCounter.innerText = minut;
+        hourCounter.innerText = hour;
+        secCounter.innerText = second;
+        mlsCounter.innerText = mls;
+      }
+
+      let interval = setInterval(add, 1000);
+
+      function stopTime() {
+        clearInterval(interval);
+      }
+      function reset() {
+        hour = 0;
+        minut = 0;
+        second = 0;
+        mls = 0;
+        clearInterval(interval);
+        minCounter.innerText = minut;
+        hourCounter.innerText = hour;
+        secCounter.innerText = second;
+        mlsCounter.innrText = mls;
+      }
+      function startTimer() {
+        clearInterval(interval);
+        interval = setInterval(add, 100);
+      }
+      document.addEventListener("mousemove", () => {
+        hour = 0;
+        minut = 0;
+        second = 0;
+        mls = 0;
+        clearInterval(interval);
+        minCounter.innerText = minut;
+        hourCounter.innerText = hour;
+        secCounter.innerText = second;
+        mlsCounter.innrText = mls;
+      });
+      let ms = 0;
+    </script>
+  </body>
+</html>
