@@ -33,10 +33,10 @@ document.addEventListener("keypress", function (event) {
     let box2width = parseInt(getComputedStyle(box2).width);
     let box3width = parseInt(getComputedStyle(box3).width);
 
-    let box4heigth = parseInt(getComputedStyle(box4).width);
-    let box1heigth = parseInt(getComputedStyle(box1).width);
-    let box2heigth = parseInt(getComputedStyle(box2).width);
-    let box3heigth = parseInt(getComputedStyle(box3).width);
+    let box4heigth = parseInt(getComputedStyle(box4).heigth);
+    let box1heigth = parseInt(getComputedStyle(box1).heigth);
+    let box2heigth = parseInt(getComputedStyle(box2).heigth);
+    let box3heigth = parseInt(getComputedStyle(box3).heigth);
 
     //box1 tomorhod width-heigth
     //box2 width--  ; heigth ++
@@ -44,16 +44,17 @@ document.addEventListener("keypress", function (event) {
     //box4 width--; heigth --
 
     box1.style.width = box1width + 10 + "px";
-    box1.style.height = box1heigth + 10 + "vh";
+    console.log(box1.style.width);
+    box1.style.height = box1heigth + 5 + "px";
 
     // box2.style.width = box2width - 10 + "%";
     // box2.style.height = box2heigth + 10 + "vh";
 
     box3.style.width = box3width + 10 + "px";
-    box3.style.height = box3heigth - 10 + "vh";
+    box3.style.height = box3heigth - 5 + "px";
 
-    box3.style.width = box4width - 10 + "px";
-    box4.style.height = box4heigth - 10 + "vh";
+    //ox3.style.width = box4width - 10 + "px";
+    //ox4.style.height = box4heigth - 10 + "vh";
   }
 });
 document.addEventListener("keypress", function (event) {

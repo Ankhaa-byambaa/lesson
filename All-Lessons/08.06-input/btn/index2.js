@@ -16,6 +16,7 @@ button.addEventListener("click", () => {
 
 function render() {
   ul.innerHTML = "";
+
   let result = data.map((element) => {
     const li = document.createElement("li");
     const btn = document.createElement("button");
@@ -25,7 +26,8 @@ function render() {
     li.innerText = element;
     btn.addEventListener("click", () => {
       const newlist = result.filter((el) => {
-        return el !== element;
+        input.
+        return el !== input.value;
       });
       result = newlist;
       render();
@@ -34,6 +36,14 @@ function render() {
     div.appendChild(btn);
     ul.appendChild(div);
   });
+  if (input.value === "") {
+    alert("hi");
+    const promp = prompt("type in here");
+    if (promp === "") {
+      return (li.innertext = promp);
+    }
+    return null;
+  }
   return result;
 }
 
@@ -43,8 +53,9 @@ function printInputValue(value) {
 
 div.appendChild(input);
 div.appendChild(button);
-// input hooson ued button deer darhad li neegdehgui bh
-// bas alert , prompt garch irdeg bh
+// input hooson ued button deer darhad li nemegdehgui bh//
+
+// bas alert , prompt garch irdeg bh//
 //prompt deer hiisen utag awtomataar li .innertext boloh
 // nemelteer css bichih
 // x button deer darhad ustdag bh
