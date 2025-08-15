@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Delius&family=Jersey+15&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      .body {
+        background-image: linear-gradient(rgb(177, 24, 116), purple);
+        background-repeat: no-repeat;
+        background-size: 100vw 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        gap: 30px;
+      }
+      .start {
+        background-color: transparent;
+        border: 2px white solid;
+        width: 300px;
+        padding: 10px 30px;
+        color: white;
+        font-size: 1.5em;
+        margin: 45vh;
+        font-family: Delius;
+      }
+      .btn {
+        background-color: transparent;
+        border: 2px white solid;
+        padding: 10px 0px;
+        width: 300px;
+        font-size: 1em;
+        color: white;
+        font-family: Delius;
+      }
+      .h3 {
+        font-size: 4em;
+        color: white;
+        margin-top: 30vh;
+        font-family: Delius;
+      }
+      .map {
+        bottom: 10px;
+        color: white;
+        font-size: 15px;
+        font-family: Delius;
+      }
+    </style>
+  </head>
+  <body class="body">
+    <button class="start" id="start">start</button>
+    <script>
+      const start = document.getElementById("start");
+      const body = document.querySelector("body");
+      const question = document.createElement("h3");
+      const button1 = document.createElement("button");
+      const button2 = document.createElement("button");
+      const button3 = document.createElement("button");
+      const button4 = document.createElement("button");
+      const map = document.createElement("div");
+      const startoverbtn = document.createElement("button");
+      const totalCorrectAnswer = document.createElement("p");
+      let arr = [
+        {
+          question: "true + false",
+          answer: [`"truefalse"`, "1", "Nan", "SyntaxError"],
+          correct: "1",
+        },
+        {
+          question: "[ , , , ].Length",
+          answer: ["0", "3", "4", "SyntaxError"],
+          correct: "3",
+        },
+        {
+          question: "[1,2,3]+[4,,5,6]",
+          answer: [`"123456"`, `"1,2,34,5,6"`, `"1,2,3,4,5,6"`, "Nan"],
+          correct: `"1,2,34,5,6"`,
+        },
+        {
+          question: "0.2+0.1 === 0.3",
+          answer: ["true", "false", "Nan", "SyntaxError"],
+          correct: "false",
+        },
+        {
+          question: `!!""`,
+          answer: ["true", "false", "undefined", "SyntaxError"],
+          correct: "false",
+        },
+        {
+          question: "parseInt(0.00000005)",
+          answer: ["0", "1", "5", "Nan"],
+          correct: "5",
+        },
+        {
+          question: ` true === "true"`,
+          answer: ["true", "false", "undefined", "SyntaxError"],
+          correct: "false",
+        },
+        {
+          question: ``,
+          answer: ["true", "false", "undefined", "SyntaxError"],
+          correct: "false",
+        },
+      ];
+      // remove start btn
+      function remove() {
+        start.remove();
+      }
+      // create 4 answer btn
+      function create() {
+        question.className = "h3";
+        button1.className = "btn";
+        button2.className = "btn";
+        button3.className = "btn";
+        button4.className = "btn";
+        map.className = "map";
+
+        body.appendChild(question);
+        body.appendChild(button1);
+        body.appendChild(button2);
+        body.appendChild(button3);
+        body.appendChild(button4);
+        body.appendChild(map);
+      }
+      // change innertext
+      function q(number) {
+        question.innerText = arr[number].question;
+        button1.innerText = arr[number].answer[number];
+        button2.innerText = arr[number].answer[1];
+        button3.innerText = arr[number].answer[2];
+        button4.innerText = arr[number].answer[3];
+        let length = parseInt(arr.length);
+        map.innerText = " Question " + (num + 1) + " of " + length;
+        // if (length === length)
+      }
+      let num = 0;
+
+      let questionNumber = 0;
+      //last page
+      function lastpage() {
+        if (questionNumber === arr.length - 1) {
+          question.remove();
+          button1.remove();
+          button2.remove();
+          button3.remove();
+          button4.remove();
+          map.remove();
+        }
+        totalCorrect();
+      }
+      //if click btn1-btn4 change innerText
+      button1.addEventListener("click", () => {
+        num++;
+        questionNumber++;
+        q(questionNumber);
+        lastpage();
+      });
+      button2.addEventListener("click", () => {
+        num++;
+        questionNumber++;
+        q(questionNumber);
+        lastpage();
+      });
+      button3.addEventListener("click", () => {
+        num++;
+        questionNumber++;
+        q(questionNumber);
+        lastpage();
+      });
+
+      button4.addEventListener("click", () => {
+        num++;
+        questionNumber++;
+        q(questionNumber);
+        lastpage();
+      });
+      // if click start add 4btn 1p remove startbtn
+      start.addEventListener("click", () => {
+        remove();
+        create();
+        q(questionNumber);
+        if (q(questionNumber) === arr.length) {
+          // last page
+        }
+      });
+      //total correct answer check
+
+      function totalCorrect() {
+        startoverbtn.className = "btn";
+        totalCorrectAnswer.className = "h3";
+        if (
+          button1.innerText === arr[i].correct ||
+          button2.innerText === arr[i].correct ||
+          button3.innerText === arr[i].correct ||
+          button4.innerText === arr[i].correct
+        ) {
+          let total = 0;
+          total++;
+          return (totalCorrectAnswer.innertext =
+            "You got " + total + "out of" + (arr.length + 1) + "correct!");
+        }
+        startoverbtn.innerText = "start over";
+
+        body.appendchild(totalCorrectAnswer);
+        body.appendChild(startoverbtn);
+      }
+      //   startoverbtn.addEventListener("click",()={
+
+      //   })
+    </script>
+  </body>
+</html>
