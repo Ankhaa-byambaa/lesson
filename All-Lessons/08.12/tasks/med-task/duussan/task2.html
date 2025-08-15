@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .mainSection {
+        width: 300px;
+        height: 150px;
+        background-color: rgb(181, 182, 183);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        border-radius: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="mainSection" id="mainSection">
+      <p class="PTag1" id="PTag1">write here</p>
+      <input type="text" class="input" id="input" />
+      <button onclick="a()">Add</button>
+      <ul id="a"></ul>
+    </div>
+    <script>
+      function a() {
+        const li = document.createElement("li");
+        document.getElementById("a").appendChild(li);
+        li.innerText = input.value;
+      }
+    </script>
+  </body>
+</html>

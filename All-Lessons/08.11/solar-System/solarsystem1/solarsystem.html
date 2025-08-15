@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Tiny5&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      * {
+        margin: 0;
+        box-sizing: 0;
+      }
+      body {
+        background-color: black;
+      }
+      .body {
+        background-color: rgb(2, 2, 7);
+        background-repeat: no-repeat;
+        background-size: 100vw 100vw;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+      }
+      .sun {
+        width: 180px;
+        position: relative;
+        top: 45px;
+        left: 440px;
+      }
+      .venus-container {
+        width: 300px;
+        height: 300px;
+        border: 0.1px white dashed;
+        border-radius: 50%;
+        animation: rotate 3s linear infinite;
+        position: relative;
+        top: 50px;
+      }
+      .venus {
+        width: 40px;
+        animation: rotate 5s linear infinite;
+        position: absolute;
+        left: 50%;
+        top: -5%;
+      }
+      .earth-container {
+        width: 400px;
+        height: 400px;
+        border: 0.1px white dashed;
+        border-radius: 50%;
+        animation: rotate 5s linear infinite;
+        position: relative;
+        top: 50px;
+        left: -350px;
+      }
+      .earth {
+        width: 40px;
+        border-radius: 50%;
+        animation: rotate 6s linear infinite;
+        position: absolute;
+        left: 50%;
+        top: -3%;
+      }
+      .mars-container {
+        width: 500px;
+        height: 500px;
+        border: 0.1px white dashed;
+        border-radius: 50%;
+        animation: rotate 6s linear infinite;
+        position: relative;
+        top: 50px;
+        left: -800px;
+      }
+      .mars {
+        width: 30px;
+        border-radius: 50%;
+        animation: rotate 6s linear infinite;
+        position: absolute;
+        left: 50%;
+        top: -3%;
+      }
+      .jupiter-container {
+        width: 600px;
+        height: 600px;
+        border: 0.1px white dashed;
+        border-radius: 50%;
+        animation: rotate 7s linear infinite;
+        position: relative;
+        top: 50px;
+        left: -1350px;
+      }
+      .jupiter {
+        width: 90px;
+        border-radius: 50%;
+        animation: rotate 3s linear infinite;
+        position: absolute;
+        left: 50%;
+        top: -5%;
+      }
+      .saturn-container {
+        width: 700px;
+        height: 700px;
+        border: 0.1px white dashed;
+        border-radius: 50%;
+        animation: rotate 4s linear infinite;
+        position: relative;
+        top: 50px;
+        left: -2000px;
+      }
+      .saturn {
+        width: 80px;
+        border-radius: 50%;
+        animation: rotate 8s linear infinite;
+        position: absolute;
+        left: 50%;
+        top: -3%;
+      }
+      .uranus-container {
+        width: 800px;
+        height: 800px;
+        border: 0.1px white dashed;
+        border-radius: 50%;
+        animation: rotate 8s linear infinite;
+        position: relative;
+        top: 50px;
+        left: -2750px;
+      }
+      .uranus {
+        width: 70px;
+        border-radius: 50%;
+        animation: rotate 5s linear infinite;
+        position: absolute;
+        left: 50%;
+        top: -3%;
+      }
+      .neptune-container {
+        width: 900px;
+        height: 900px;
+        border: 0.1px white dashed;
+        border-radius: 50%;
+        animation: rotate 6s linear infinite;
+        position: relative;
+        top: 50px;
+        left: -3600px;
+      }
+      .neptune {
+        width: 65px;
+        border-radius: 50%;
+        animation: rotate 5s linear infinite;
+        position: absolute;
+        left: 50%;
+        top: -3%;
+      }
+
+      .mercury-container {
+        width: 200px;
+        height: 200px;
+        border: 0.1px white dashed;
+        border-radius: 50%;
+        animation: rotate 2s linear infinite;
+        position: relative;
+        top: 50px;
+        left: 250px;
+      }
+      .mercury {
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        animation: rotate 3s linear infinite;
+        position: absolute;
+        left: 50%;
+        top: -5%;
+      }
+
+      @keyframes rotate {
+        from {
+          transform: rotate(0);
+        }
+        to {
+          transform: rotate(360deg);
+        }
+      }
+      .back {
+        display: flex;
+        flex-wrap: nowrap;
+        font-family: Tiny5;
+        font-size: 2.5em;
+        color: rgb(251, 255, 0);
+        background-color: black;
+        text-decoration: underline;
+      }
+    </style>
+  </head>
+  <body>
+    <a href="ss1.html">
+      <button class="back"><-- back --></button>
+    </a>
+
+    <div class="body">
+      <img src="last sun-Photoroom.png" alt="" class="sun" />
+
+      <div class="mercury-container">
+        <img
+          src="https://menard-codes.github.io/starwars-outer-space//assets/images/planets/mercury.png"
+          alt=""
+          class="mercury"
+        />
+      </div>
+
+      <div class="venus-container">
+        <img
+          src="https://menard-codes.github.io/starwars-outer-space//assets/images/planets/venus.png"
+          alt=""
+          class="venus"
+        />
+      </div>
+
+      <div class="earth-container">
+        <img
+          src="https://menard-codes.github.io/starwars-outer-space//assets/images/planets/earth.png"
+          alt=""
+          class="earth"
+        />
+      </div>
+
+      <div class="mars-container">
+        <img
+          src="https://menard-codes.github.io/starwars-outer-space//assets/images/planets/mars.png"
+          alt=""
+          class="mars"
+        />
+      </div>
+
+      <div class="jupiter-container">
+        <img
+          src="https://menard-codes.github.io/starwars-outer-space//assets/images/planets/jupiter.png"
+          alt=""
+          class="jupiter"
+        />
+      </div>
+
+      <div class="saturn-container">
+        <img
+          src="https://menard-codes.github.io/starwars-outer-space//assets/images/planets/saturn.png"
+          alt=""
+          class="saturn"
+        />
+      </div>
+
+      <div class="uranus-container">
+        <img
+          src="https://menard-codes.github.io/starwars-outer-space//assets/images/planets/uranus.png"
+          alt=""
+          class="uranus"
+        />
+      </div>
+
+      <div class="neptune-container">
+        <img
+          src="https://menard-codes.github.io/starwars-outer-space//assets/images/planets/neptune.png"
+          alt=""
+          class="neptune"
+        />
+      </div>
+    </div>
+  </body>
+</html>
